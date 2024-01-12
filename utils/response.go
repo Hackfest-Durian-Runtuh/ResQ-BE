@@ -22,6 +22,7 @@ func Success(ctx *gin.Context, status int, data any) {
 		Data: data,
 	}
 	ctx.JSON(status, response)
+	ctx.Abort()
 }
 
 func Fail(ctx *gin.Context, status int, errorMessage string) {

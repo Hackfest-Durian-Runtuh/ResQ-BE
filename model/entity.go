@@ -56,5 +56,6 @@ type User struct {
 	Name        string         `json:"name"`
 	NIK         string         `json:"nik"`
 	PhoneNumber string         `json:"phone_number"`
-	IsAdmin     bool           `json:"is_admin"`
+	IsAdmin     bool           `json:"is_admin" gorm:"default:false"`
+	Image       string         `json:"image"`
 }

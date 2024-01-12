@@ -26,7 +26,7 @@ func InitDB() *gorm.DB {
 	if err != nil {
 		log.Fatalf("init db failed, %s\n", err)
 	}
-	dbGlobal = db
+	dbGlobal = db.Debug()
 	return dbGlobal
 }
 

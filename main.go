@@ -15,12 +15,12 @@ func main() {
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
-	db := config.Init()
+	db := config.InitDB()
 
 	if db == nil {
 		log.Fatal("init connection db failed")
 	}
-	err = config.Migrate()
+	err = config.MigrateDB()
 	if err != nil {
 		log.Fatalln(err.Error())
 	}
