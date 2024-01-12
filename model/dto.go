@@ -66,7 +66,7 @@ type UserRegister struct {
 	PhoneNumber string `json:"phone_number"`
 }
 
-func (u UserRegister) Validate() error {
+func (u *UserRegister) Validate() error {
 	return validation.ValidateStruct(u,
 		validation.Field(&u.Name, validation.Required),
 		validation.Field(&u.NIK, validation.Required),

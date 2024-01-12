@@ -27,7 +27,7 @@ func (u *user) Register(ctx *gin.Context) {
 		utils.SetError(ctx, err, message)
 		return
 	}
-	utils.Success(ctx, 201, nil)
+	utils.Success(ctx, 201, gin.H{"status": "success"})
 }
 
 func (u *user) Login(ctx *gin.Context) {

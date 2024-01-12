@@ -1,14 +1,18 @@
-@name=Example Requests
+@name=User Request
 
-### GET Request
-GET https://jsonplaceholder.typicode.com/posts/1
+@base_url=http://localhost:8080/api/v1
 
-### POST Request
-POST https://jsonplaceholder.typicode.com/posts
+### Register
+
+POST {{base_url}}/user/register
 Content-Type: application/json
 
 {
-  "title": "foo",
-  "body": "bar",
-  "userId": 1
+  "name": "John Doe",
+  "nik": "dkjsahdjhakjs",
+  "phone_number": "1234567890"
 }
+
+
+### GET Request
+GET https://jsonplaceholder.typicode.com/posts/1
