@@ -5,10 +5,11 @@ import (
 	"resq-be/repositories"
 	"resq-be/usecases"
 
+	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
 
-func User(db *gorm.DB) {
+func User(db *gorm.DB, r *gin.RouterGroup) {
 	userRepo := repositories.NewUser(db)
 	userUsecase := usecases.NewUser(userRepo)
 	userController := controllers.NewUser(userUsecase)
