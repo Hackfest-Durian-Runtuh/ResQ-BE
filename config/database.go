@@ -12,7 +12,7 @@ import (
 
 var dbGlobal *gorm.DB
 
-func Init() *gorm.DB {
+func InitDB() *gorm.DB {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		os.Getenv("DB_USERNAME"),
 		os.Getenv("DB_PASSWORD"),
@@ -30,7 +30,7 @@ func Init() *gorm.DB {
 	return dbGlobal
 }
 
-func Migrate(model ...interface{}) error {
+func MigrateDB(model ...interface{}) error {
 	if dbGlobal != nil {
 		return dbGlobal.AutoMigrate(model...)
 	}
