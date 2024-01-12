@@ -51,6 +51,6 @@ Please refer to the [docs](https://github.com/Hackfest-Durian-Runtuh/ResQ-BE/tre
 
 ## Authors
 
-- [Aditya Rizky Ramadhan]([https](https://github.com/adityarizkyramadhan))
+- [Aditya Rizky Ramadhan](https://github.com/adityarizkyramadhan)
 
 
