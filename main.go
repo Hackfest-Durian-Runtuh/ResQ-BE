@@ -37,7 +37,7 @@ func main() {
 	app.Use(middlewares.Timeout(60))
 	v1 := app.Group("/api/v1")
 	routes.User(db, v1)
-	port := ":8080"
+	port := ":8081"
 	if os.Getenv("PORT") != "" {
 		port = ":" + os.Getenv("PORT")
 	}
