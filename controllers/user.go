@@ -41,7 +41,9 @@ func (u *user) Login(ctx *gin.Context) {
 		utils.SetError(ctx, err, message)
 		return
 	}
-	utils.Success(ctx, 200, nil)
+	utils.Success(ctx, 200, gin.H{
+		"status": "OTP sent to you number",
+	})
 }
 
 func (u *user) Update(ctx *gin.Context) {

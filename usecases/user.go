@@ -2,6 +2,8 @@ package usecases
 
 import (
 	"context"
+	"fmt"
+	"os"
 	"resq-be/model"
 	"resq-be/repositories"
 	"resq-be/utils"
@@ -42,6 +44,11 @@ func (u *user) Login(ctx context.Context, arg *model.UserLogin) (string, error) 
 	if user == nil {
 		return utils.ErrNotFound, err
 	}
+	message := fmt.Sprintf(`
+	Aplikasi RES-Q, harap masukkan kode OTP berikut: %s.
+	Ingat, jangan sebarkan kode ini untuk keamanan bersama.
+	Terima kasih atas kerjasamanya!`, utils.GenerateOTP())
+	go utils.SendSMS(os.Getenv("WEB_SMS_TOKEN"), user.PhoneNumber, message)
 	return "", nil
 }
 
